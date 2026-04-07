@@ -29,8 +29,13 @@ A simple mini activity for PELEC202.
 1. Download and install [NodeJS](https://nodejs.org/en/download) and [Git](https://git-scm.com/install/) if you don't have it yet.
 2. Clone this repository by opening `git bash` or `cmd` on a folder where you want it to be stored (*`Example: D:\my-projects, Documents, Desktop, etc...`, its up to you*), and run this command `git clone https://github.com/khianvictorycalderon/pelec202-finals-activity-1-g3.git`
 3. Go to `pelec202-finals-activity-1-g3` folder and open VS code inside it. After opening, you should see `public` and `src` folders and bunch of other files.
-4. Run `npm install` and wait for it to finish. After installing, you should see a `node_modules` folder. **IGNORE** the **Vulnerabilities** message. Example: `26 vulnerabilities (9 low, 3 moderate, 14 high)`.
-5. Run `npm start` to start development server. You can now edit files inside `src` folder, and do what I assigned to you.
+4. Create an `.env` file that contains:
+    ```env
+    REACT_APP_API_KEY=<your-api-key>
+    ```
+    **NOTE**: Replace the `<your-api-key>` with your actual API key you got after verifying your email at ![OMDB API](https://www.omdbapi.com/apikey.aspx)
+5. Run `npm install` and wait for it to finish. After installing, you should see a `node_modules` folder. **IGNORE** the **Vulnerabilities** message. Example: `26 vulnerabilities (9 low, 3 moderate, 14 high)`.
+6. Run `npm start` to start development server. You can now edit files inside `src` folder, and do what I assigned to you.
 
 ## Push and Pull Instruction for Members Only
 1. After the initial setup, always run `git pull origin main` before committing files for latest version of the files.
