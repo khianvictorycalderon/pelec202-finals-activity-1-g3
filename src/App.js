@@ -8,7 +8,7 @@
 
 */
 
-import HeroSection from './HeroSection'; // Make sure the path matches where you saved it
+import HeroSection from "./components/HeroSection";
 
 function App() {
   return (
