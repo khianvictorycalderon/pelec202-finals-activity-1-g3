@@ -8,13 +8,14 @@
 
 */
 
+import HeroSection from './HeroSection'; // Make sure the path matches where you saved it
 
-// Integrate UI here...
-export default function App() {
+function App() {
   return (
-    <>
-      <h1 className="text-4xl font-bold text-red-600">PELEC202 Finals Activity 1</h1>
-      <p>Group 3</p>
-    </>
-  )
+    <div>
+      <HeroSection />
+    </div>
+  );
 }
+
+export default App;
