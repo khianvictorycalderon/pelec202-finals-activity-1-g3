@@ -9,7 +9,7 @@
 */
 
 
-// Integrat UI here...
+// Integrate UI here...
 export default function App() {
   return (
     <>

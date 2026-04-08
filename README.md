@@ -2,7 +2,7 @@
 A simple mini activity for PELEC202.
 
 ## Members:
-- Calderon, Khian Victory
+- Calderon, Khian Victory **(Team Leader)**
 - Calderon, Nichole Allyson
 - Alonzo, Sean
 - Fernandez, Benedict
@@ -15,13 +15,6 @@ A simple mini activity for PELEC202.
 - Garcia, Jayvee
 - Cortes, Paul
 - Zarsadias, Teryx
-
----
-
-## Setup
-1. Clone this repository via `git clone https://github.com/khianvictorycalderon/pelec202-finals-activity-1-g3.git`
-2. Run `npm install`
-3. Run `npm start`
 
 ---
 
