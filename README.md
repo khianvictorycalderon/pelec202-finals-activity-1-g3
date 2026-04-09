@@ -16,6 +16,12 @@ A simple mini activity for PELEC202.
 - Cortes, Paul
 - Zarsadias, Teryx
 
+## Previews
+
+![Hero Section](hero.png)
+![Search Section](search.png)
+![Footer Section](footer.png)
+
 ---
 
 ## Initial Setup Instruction for Members Only:
