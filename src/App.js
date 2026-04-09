@@ -79,8 +79,7 @@ function App() {
             movies.map((movie) => (
               <Card 
                 key={movie.imdbID} 
-                movie={movie} 
-                onViewDetails={(movie) => console.log(movie)}
+                movie={movie}
               />
             ))
           ) : (
