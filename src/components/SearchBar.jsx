@@ -21,7 +21,7 @@ export default function SearchBar({
       <button
         type="submit"
         onClick={() => console.log("Searching:", value)}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg shadow-blue-600/20 transition-all duration-300"
+        className="cursor-pointer absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg shadow-blue-600/20 transition-all duration-300"
       >
         <svg
           className="w-5 h-5"
