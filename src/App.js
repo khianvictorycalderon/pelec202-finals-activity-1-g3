@@ -11,6 +11,11 @@
 import HeroSection from "./components/HeroSection";
 
 function App() {
+  try {
+    
+  } catch (e) {
+    
+  }
   return (
     <div>
       <HeroSection />
