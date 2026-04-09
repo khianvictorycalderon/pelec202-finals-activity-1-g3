@@ -11,7 +11,7 @@ export default function Card({ movie }) {
       {/* Poster */}
       <div className="relative">
         <img
-          src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450"}
+          src={movie.Poster !== "N/A" ? movie.Poster : "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
           alt={movie.Title}
           className="w-full h-96 object-cover"
         />
@@ -29,7 +29,7 @@ export default function Card({ movie }) {
         <p className="text-gray-400 text-sm">
           {movie.Year}
         </p>
-        
+
       </div>
 
       {/* Glow effect */}
