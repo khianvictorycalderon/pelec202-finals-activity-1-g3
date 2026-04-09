@@ -1,25 +1,28 @@
-import React, { useState } from "react";
-
-export default function SearchBar({ placeholder = "Search movies..." }) {
-  const [query, setQuery] = useState("");
+export default function SearchBar({ 
+  placeholder = "Search movies...",
+  value,
+  setValue,
+  handleSubmit
+}) {
 
   return (
-    <div className="w-full max-w-xl mx-auto relative mt-6">
-      {/* Input Field */}
+    <form 
+      onSubmit={handleSubmit}
+      className="w-full max-w-xl mx-auto relative mt-6"
+      >
       <input
         type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
         placeholder={placeholder}
         className="w-full px-6 py-4 rounded-full bg-gray-900/80 text-white placeholder-gray-400 backdrop-blur-sm border border-gray-800 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
       />
 
-      {/* Search Button (inside the input) */}
       <button
-        onClick={() => console.log("Searching:", query)}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg shadow-blue-600/20 transition-all duration-300"
+        type="submit"
+        onClick={() => console.log("Searching:", value)}
+        className="cursor-pointer absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg shadow-blue-600/20 transition-all duration-300"
       >
-        {/* Magnifying Glass Icon */}
         <svg
           className="w-5 h-5"
           fill="none"
@@ -35,6 +38,6 @@ export default function SearchBar({ placeholder = "Search movies..." }) {
           />
         </svg>
       </button>
-    </div>
+    </form>
   );
 }

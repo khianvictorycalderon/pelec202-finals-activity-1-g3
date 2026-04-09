@@ -1,29 +1,40 @@
-// Jayvee & Benedict
-export default function Card() {
-    return (
-        <div>
-            <div class="relative w-96 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
-  
+export default function Card({ movie }) {
+
+  return (
+    <a
+      href={`https://www.imdb.com/title/${movie.imdbID}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block relative w-72 rounded-2xl overflow-hidden bg-gray-900/60 border border-gray-800 shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-2"
+    >
+
+      {/* Poster */}
+      <div className="relative">
         <img
-          src="https://files.ekmcdn.com/allwallpapers/images/star-wars-the-last-jedi-61x91.5cm-movie-poster-38458-1-p.jpg?ixlib=rb-4.0.3&auto=format&fit=crop&w=927&q=80"
-          alt="Movie Poster"
-          class="w-full h-128 object-cover"
+          src={movie.Poster !== "N/A" ? movie.Poster : "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+          alt={movie.Title}
+          className="w-full h-96 object-cover"
         />
-  
-        <div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-white/20 to-white/0 backdrop-blur-md text-center">
-          <h2 class="text-black text-xl font-bold">Movie Title</h2>
-          <p class="text-black text-sm mt-1 line-clamp-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt.
-          </p>
-  
-          <button class="relative w-full inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-white rounded-lg group bg-gradient-to-br from-blue-700 to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 mt-3">
-            <span class="relative px-4 py-2.5 transition-all ease-in duration-75 bg-white/20 rounded-md group-hover:bg-transparent leading-5 w-full text-center">
-              Watch Now
-            </span>
-          </button>
-        </div>
-  
+
+        {/* Dark overlay on hover */}
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300"></div>
       </div>
-        </div>
-    )
+
+      {/* Content */}
+      <div className="p-4 text-center space-y-2">
+        <h2 className="text-white text-lg font-semibold line-clamp-1 group-hover:text-cyan-400 transition">
+          {movie.Title}
+        </h2>
+
+        <p className="text-gray-400 text-sm">
+          {movie.Year}
+        </p>
+
+      </div>
+
+      {/* Glow effect */}
+      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none border border-blue-500/20"></div>
+
+    </a>
+  );
 }
