@@ -36,10 +36,6 @@ export default function HeroSection() {
             </svg>
             Start Searching
           </button>
-          
-          <button className="cursor-pointer px-8 py-3 rounded-full border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition-all duration-300 font-medium">
-            View Project Details
-          </button>
         </div>
 
       </div>
