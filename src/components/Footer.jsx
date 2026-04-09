@@ -3,7 +3,7 @@ export default function Footer() { // Do not modify this line of code, leave it 
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="w-full bg-gradient-to-r from-blue-950 via-blue-900 to-blue-800 text-blue-100 border-t border-blue-700/30">
+        <footer className="w-full bg-gradient-to-r from-gray-950 via-gray-900 to-gray-800 text-blue-100">
             <div className="max-w-6xl mx-auto px-6 py-12">
                 
                 <div className="grid gap-12 md:grid-cols-3">
@@ -28,21 +28,15 @@ export default function Footer() { // Do not modify this line of code, leave it 
                     Menu
                     </h3>
                     <ul className="space-y-3 text-sm">
-                    <li>
-                        <a href="#" className="hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
-                        <span>›</span> Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#search" className="hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
-                        <span>›</span> Search
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#about" className="hover:text-blue-400 transition-colors duration-200 flex items-center gap-2">
-                        <span>›</span> About Us
-                        </a>
-                    </li>
+                        <li>
+                            <a 
+                                href="https://github.com/khianvictorycalderon/pelec202-finals-activity-1-g3"
+                                target="_blank"
+                                className="hover:text-blue-400 transition-colors duration-200 flex items-center gap-2"
+                                >
+                                Source Code
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
@@ -51,8 +45,8 @@ export default function Footer() { // Do not modify this line of code, leave it 
                     <h3 className="text-xs font-bold text-white uppercase tracking-[0.2em] mb-4">
                     Development Team
                     </h3>
-                    <p className="text-sm font-semibold text-blue-100">Group 3 - Class 2026</p>
-                    <p className="text-xs text-blue-400 mt-1">Lead UI/UX Developers</p>
+                    <p className="text-sm font-semibold text-blue-100">PELEC202 Group 3 (S.Y 2025 - 2026)</p>
+                    <p className="text-xs text-neutral-400 mt-1">Lead UI/UX Developers</p>
                     
                     <div className="flex gap-4 mt-5">
                     <a href="#" className="text-blue-300 hover:text-white transition-transform hover:scale-110">
