@@ -47,30 +47,45 @@ function App() {
     <>
       <HeroSection />
       
-      <div id="search-section" className="px-4">
+      <div
+        id="search-section"
+        className="min-h-screen px-4 py-16 bg-gray-950 text-white flex flex-col items-center"
+      >
 
-        <SearchBar 
-          value={searchTitleInput}
-          setValue={setSearchTitleInput}
-          handleSubmit={handleSearchMovie}
-          placeholder="Search movies..." 
-        />
+        {/* Search Bar */}
+        <div className="w-full max-w-2xl">
+          <SearchBar 
+            value={searchTitleInput}
+            setValue={setSearchTitleInput}
+            handleSubmit={handleSearchMovie}
+            placeholder="Search movies..." 
+          />
+        </div>
 
-        {/* Loading */}
-        {loading && (
-          <p className="text-center text-white mt-6">Loading...</p>
-        )}
+        {/* Status Messages */}
+        <div className="mt-8 text-center min-h-[40px] flex items-center justify-center">
+          {loading && (
+            <p className="text-gray-400 animate-pulse">Searching movies...</p>
+          )}
 
-        {/* Error */}
-        {error && (
-          <p className="text-center text-red-500 mt-6">{error}</p>
-        )}
+          {error && (
+            <p className="text-red-400">{error}</p>
+          )}
+        </div>
 
-        {/* Movies */}
-        <div className="flex flex-wrap justify-center gap-6 mt-8">
-          {movies.map((movie) => (
-            <Card key={movie.imdbID} movie={movie} />
-          ))}
+        {/* Movies Grid */}
+        <div className="mt-12 w-full max-w-6xl grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {movies.length > 0 ? (
+            movies.map((movie) => (
+              <Card key={movie.imdbID} movie={movie} />
+            ))
+          ) : (
+            !loading && !error && (
+              <p className="col-span-full text-gray-500 text-center">
+                Start searching to discover movies 🎬
+              </p>
+            )
+          )}
         </div>
 
       </div>
