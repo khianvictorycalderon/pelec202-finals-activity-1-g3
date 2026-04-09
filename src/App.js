@@ -74,7 +74,7 @@ function App() {
         </div>
 
         {/* Movies Grid */}
-        <div className="mt-12 w-full max-w-6xl grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-12 w-full max-w-6xl grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
           {movies.length > 0 ? (
             movies.map((movie) => (
               <Card 
