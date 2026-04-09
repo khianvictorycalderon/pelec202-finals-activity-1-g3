@@ -2,7 +2,7 @@ import { slideTo } from "../utils/slide-ref";
 
 export default function HeroSection() {
   return (
-    <section className="h-screen w-full flex flex-col justify-center items-center text-center px-6 bg-gray-950 text-white relative overflow-hidden">
+    <section className="h-screen w-full flex flex-col justify-center items-center text-center px-6 bg-gray-900 text-white relative overflow-hidden">
       
       {/* Background Glowing Effects*/}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
