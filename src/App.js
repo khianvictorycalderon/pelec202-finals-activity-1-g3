@@ -4,7 +4,7 @@ import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://www.omdbapi.com";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
