@@ -1,3 +1,5 @@
+import { slideTo } from "../utils/slide-ref";
+
 export default function HeroSection() {
   return (
     <section className="h-screen w-full flex flex-col justify-center items-center text-center px-6 bg-gray-950 text-white relative overflow-hidden">
@@ -29,7 +31,10 @@ export default function HeroSection() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-          <button className="cursor-pointer px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 font-semibold shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+          <button 
+            onClick={() => slideTo("search-section")}
+            className="cursor-pointer px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 font-semibold shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2 transform hover:-translate-y-1"
+            >
             {/* Search Icon */}
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
