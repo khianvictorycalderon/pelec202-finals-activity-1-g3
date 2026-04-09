@@ -77,7 +77,11 @@ function App() {
         <div className="mt-12 w-full max-w-6xl grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {movies.length > 0 ? (
             movies.map((movie) => (
-              <Card key={movie.imdbID} movie={movie} />
+              <Card 
+                key={movie.imdbID} 
+                movie={movie} 
+                onViewDetails={(movie) => console.log(movie)}
+              />
             ))
           ) : (
             !loading && !error && (
