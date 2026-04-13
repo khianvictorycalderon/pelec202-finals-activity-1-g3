@@ -19,6 +19,7 @@ A simple mini activity for PELEC202.
 ## Previews
 
 ![Hero Section](hero.png)
+![Movie Recommendations](recommendations.png)
 ![Search Section](search.png)
 ![Footer Section](footer.png)
 
