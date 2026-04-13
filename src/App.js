@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getRandomSearch } from './utils/recommendation';
 import HeroSection from "./components/HeroSection";
 import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
@@ -13,18 +14,17 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [isInitialSearch, setIsInitialSearch] = useState(false);
 
-  const handleSearchMovie = async (e) => {
-    e.preventDefault();
-
-    if (!searchTitleInput) return;
+  const fetchMovies = async (movieTitle) => {
+    if (!movieTitle) return;
 
     setLoading(true);
     setError(null);
 
     try {
       const response = await fetch(
-        `${API_URL}/?apikey=${API_KEY}&s=${searchTitleInput}`
+        `${API_URL}/?apikey=${API_KEY}&s=${movieTitle}`
       );
 
       const data = await response.json();
@@ -42,6 +42,18 @@ function App() {
       setLoading(false);
     }
   };
+
+  const handleSearchMovie = (e) => {
+    e.preventDefault();
+    if (!searchTitleInput.trim()) alert("Please enter a movie title");
+    setIsInitialSearch(true);
+    fetchMovies(searchTitleInput);
+  };
+
+  useEffect(() => {
+    const randomMovie = getRandomSearch();
+    fetchMovies(randomMovie);
+  }, []);
 
   return (
     <>
@@ -73,22 +85,33 @@ function App() {
           )}
         </div>
 
-        {/* Movies Grid */}
-        <div className="mt-12 w-full max-w-6xl grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
-          {movies.length > 0 ? (
-            movies.map((movie) => (
-              <Card 
-                key={movie.imdbID} 
-                movie={movie}
-              />
-            ))
-          ) : (
-            !loading && !error && (
-              <p className="col-span-full text-gray-500 text-center">
-                Start searching to discover movies 🎬
-              </p>
-            )
+        <div className="mt-12 w-full max-w-6xl">
+
+          {/* Section Label */}
+          {!loading && !error && movies.length > 0 && (
+            <h2 className="text-2xl font-semibold text-white mb-6 text-center">
+              {isInitialSearch ? "Search Results" : "Recommended for you 🎬"}
+            </h2>
           )}
+
+          {/* Movies Grid */}
+          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
+            {movies.length > 0 ? (
+              movies.map((movie) => (
+                <Card 
+                  key={movie.imdbID} 
+                  movie={movie}
+                />
+              ))
+            ) : (
+              !loading && !error && (
+                <p className="col-span-full text-gray-500 text-center">
+                  Start searching to discover movies 🎬
+                </p>
+              )
+            )}
+          </div>
+
         </div>
 
       </div>
